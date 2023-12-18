@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
 import NavBarCompo from './NavBarCompo.css'
+import { Link } from 'react-router-dom';
 
 
 const NavBarComponent = () => {
@@ -12,7 +13,7 @@ const NavBarComponent = () => {
 
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">TIENDA BEAUTY</Navbar.Brand>
+                    <Link to='/' href="#home">TIENDA BEAUTY</Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
