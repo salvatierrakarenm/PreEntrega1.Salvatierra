@@ -4,15 +4,17 @@ import { useGetProducts } from '../hooks/useProducts';
 
 export const Home = () => {
 
-    // Setear titulo de pagina
+    
     useEffect(() => {
         document.title = "Mi tienda - Home";
     })
 
-    const { productsData } = useGetProducts(15);
+    const { productsData } = useGetProducts(8);
 
 
     return (
+        <>
         <ItemListContainer productsData={productsData} />
+        </>
     )
 }

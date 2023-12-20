@@ -18,17 +18,3 @@ export async function getProductById(id) {
 export async function getProductByCategory(category) {
     return await axios.get(`https://dummyjson.com/products/category/${category}`);
 }
-
-export const getPhones() => {
-    const options = {
-
-        method: 'GET',
-        url: 'https://mobile-phones2.p.rapidapi.com/brands',
-        headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-            'X-RapidAPI-Host': 'mobile-phones2.p.rapidapi.com'
-        }
-    };
-
-
-}
