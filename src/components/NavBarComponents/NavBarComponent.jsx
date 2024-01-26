@@ -6,25 +6,26 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "./CartWidget";
 
 import { Link } from "react-router-dom";
-import { useCategory } from "../../hooks/useCategory";
+import { useGetCategories } from "../../hooks/useProducts";
 
 const NavBar = () => {
 
-    const { category } = useCategory();
+    const { categories } = useGetCategories('categories');
+
 
     return (
 
         <Navbar expand="lg" className="bg-body-tertiary" >
             <Container>
-                <Link to="/">Tienda Home</Link>
+                <Link to="/" style={{ color: 'black', fontSize: '1rem' }}>Tecnologic Home</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            {category.map((item, index) => {
+                            {categories.map((item, index) => {
                                 return (
                                     <NavDropdown.Item key={index}>
-                                        <Link to={`/category/${item}`}>{item}</Link>
+                                        <Link to={`/category/${item.id}`}>{item.id}</Link>
                                     </NavDropdown.Item>
                                 );
                             })}
